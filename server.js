@@ -276,7 +276,7 @@ app.post('/api/contact', contactLimiter, upload.array('photos', 5), async (req, 
     if (message) msg += `*Description:* ${safeMessage}\n`;
     if (county) msg += `*County:* ${safeCounty} County\n`;
     if (photos.length > 0) msg += `*Photos:* ${photos.length} attached\n`;
-    msg += '\n_From 2mmcontractor.com_';
+    msg += '\n_From 2mmplumbing.com_';
 
     // Build email HTML
     const h = {
