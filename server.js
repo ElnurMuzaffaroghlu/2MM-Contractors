@@ -207,7 +207,7 @@ function sendEmail(subject, html, attachments) {
   }
 
   return emailTransporter.sendMail({
-    from: `"2MM Contractor Website" <${process.env.GMAIL_USER}>`,
+    from: `"2MM Plumbing Website" <${process.env.GMAIL_USER}>`,
     to: process.env.GMAIL_USER,
     subject,
     html,
@@ -302,7 +302,7 @@ app.post('/api/contact', contactLimiter, upload.array('photos', 5), async (req, 
         ${h.county ? `<tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">County</td><td style="padding:8px;border-bottom:1px solid #eee;">${h.county} County</td></tr>` : ''}
         ${photos.length > 0 ? `<tr><td style="padding:8px;font-weight:bold;">Photos</td><td style="padding:8px;">${photos.length} attached</td></tr>` : ''}
       </table>
-      <br><p style="color:#999;font-size:12px;">Sent from 2MM Contractor website</p>`;
+      <br><p style="color:#999;font-size:12px;">Sent from 2MM Plumbing website</p>`;
 
     const emailAttachments = photos.map(f => ({
       filename: f.originalname,
