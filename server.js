@@ -318,7 +318,7 @@ app.post('/api/contact', contactLimiter, upload.array('photos', 5), async (req, 
     }
 
     // Send email (non-blocking — don't fail the request if email fails)
-    sendEmail(`New Request \u2014 ${h.name}`, emailHtml, emailAttachments).catch(err => {
+    await sendEmail(`New Request \u2014 ${h.name}`, emailHtml, emailAttachments).catch(err => {
       console.log('Email skipped:', err.message);
     });
 
